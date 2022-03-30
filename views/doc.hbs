@@ -476,7 +476,7 @@
             for (let i = 0; i < query.length; i++) {
                 let item = query.item(i);
 
-                item.textContent = item.textContent.replace("{domain}", window.location.origin)
+                item.textContent = item.textContent.replace("{domain}", window.location.origin + "/api/v1")
             }
         }
     </script>

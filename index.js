@@ -14,9 +14,6 @@ app.use("/static", express.static(staicPath));
 app.set("view engine", "hbs");
 hbs.registerPartials(partialPath);
 
-// doc routes
-app.use("/", routes.doc);
-
 app.use("/api/v1/", (req, res, next) => {
   req.data = data;
   next();
@@ -40,6 +37,9 @@ app.get("/api/v1/id/:id", (req, res) => {
 app.get("/api/v1/:index", (req, res) => {
   res.json(req.data[req.params.index]);
 });
+
+// doc routes
+app.use("/", routes.doc);
 
 app.listen(env.PORT || 3000, () => {
   console.log(`Server is Running on http://${env.HOST}:${env.PORT || 3000}/`);
