@@ -6,15 +6,11 @@ route.get("/", (req, res) => {
 });
 
 route.get("/doc", (req, res) => {
-  res.render("doc", {
-    domain: `http://${env.HOST}:${env.PORT || 3000}${env.API_PATH}`,
-  });
+  res.render("doc");
 });
 
 route.get("/about", (req, res) => {
-  res.render("about", {
-    domain: `http://${env.HOST}:${env.PORT || 3000}${env.API_PATH}`,
-  });
+  res.render("about");
 });
 
 module.exports = route;
