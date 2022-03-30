@@ -1,0 +1,15 @@
+#box {
+  background-color: #ddd;
+  padding: 15px;
+}
+
+#box h2 {
+  margin: 15px;
+  padding: 15px 5px 5px 15px;
+}
+
+#box p {
+  background-color: #eee;
+  margin: 0 15px 15px 15px;
+  padding: 15px 15px;
+}
