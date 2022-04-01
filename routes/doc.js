@@ -4,21 +4,24 @@ const env = process.env;
 route.get("/", (req, res) => {
   res.render("home", {
     style: "home",
-    title: "Home ",
+    title: "Home",
+    page: "",
   });
 });
 
 route.get("/doc", (req, res) => {
   res.render("doc", {
     style: "doc",
-    title: "Documentation ",
+    title: "Documentation",
+    page: "doc",
   });
 });
 
 route.get("/about", (req, res) => {
   res.render("about", {
     style: "about",
-    title: "About ",
+    title: "About",
+    page: "about",
   });
 });
 
