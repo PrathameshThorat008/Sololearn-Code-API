@@ -7,10 +7,11 @@ const routes = require("./routes/index");
 const hbs = require("hbs");
 const app = express();
 
+const publicPath = path.join(__dirname, "public");
 const staicPath = path.join(__dirname, "static");
 const partialPath = path.join(__dirname, "views", "partials");
 
-app.use("/static", express.static(staicPath));
+app.use("/", express.static(staicPath));
 app.set("view engine", "hbs");
 hbs.registerPartials(partialPath);
 
@@ -42,5 +43,5 @@ app.get("/api/v1/:index", (req, res) => {
 app.use("/", routes.doc);
 
 app.listen(env.PORT || 3000, () => {
-  console.log(`Server is Running on http://${env.HOST}:${env.PORT || 3000}/`);
+  console.log(`Server is Running on http://localhost:${env.PORT || 3000}/`);
 });
