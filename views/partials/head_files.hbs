@@ -26,12 +26,26 @@
 <meta name="theme-color" content="#8400e2">
 
 <link rel="stylesheet" href="/css/header.css">
+{{#if style}}
 <link rel="stylesheet" href="/css/{{style}}.css">
+{{/if}}
 <link rel="stylesheet" href="/css/footer.css">
 
+{{#if title}}
 <meta property="og:title" content="{{title}} : Sololearn Code API" />
+{{else}}
+<meta property="og:title" content="Sololearn Code API" />
+{{/if}}
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://sl-code-api.herokuapp.com/{{page}}" />
+{{#if title}}
+<meta property="og:title" content="{{title}} : Sololearn Code API" />
+{{else}}
+<meta property="og:title" content="Sololearn Code API" />
+{{/if}}
 <meta property="og:image" content="https://sl-code-api.herokuapp.com/icon/favicon-96x96.png" />
 
+{{#if title}}
 <title>{{title}} : Sololearn Code API</title>
+{{else}}
+<title>Sololearn Code API</title>
+{{/if}}

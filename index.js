@@ -35,12 +35,55 @@ app.get("/api/v1/id/:id", (req, res) => {
 });
 
 // get specific index route
-app.get("/api/v1/:index", (req, res) => {
+app.get("/api/v1/index/:index", (req, res) => {
   res.json(req.data[req.params.index]);
 });
 
 // doc routes
 app.use("/", routes.doc);
+
+// Default api route
+app.get("/api/v1/*", (req, res) => {
+  res.json(
+    {
+      message: "Requested Route is not Available",
+    },
+    404
+  );
+});
+app.delete("/api/v1/*", (req, res) => {
+  res.json(
+    {
+      message: "Requested Route is not Available",
+    },
+    404
+  );
+});
+app.post("/api/v1/*", (req, res) => {
+  res.json(
+    {
+      message: "Requested Route is not Available",
+    },
+    404
+  );
+});
+app.put("/api/v1/*", (req, res) => {
+  res.json(
+    {
+      message: "Requested Route is not Available",
+    },
+    404
+  );
+});
+
+app.get("/*", (req, res) => {
+  res.status(404);
+  res.render("404", {
+    style: "home",
+    page: "404",
+    title: "404",
+  });
+});
 
 app.listen(env.PORT || 3000, () => {
   console.log(`Server is Running on http://localhost:${env.PORT || 3000}/`);
